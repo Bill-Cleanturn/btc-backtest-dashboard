@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-03-08T03:07:14.815919+09:00",
+  "kept_count": 12,
+  "discarded_count": 195,
+  "best": {
+    "rank": 1,
+    "strategy_id": "rev_alternating_th160_h24_tf002",
+    "name": "반전진입 · alternating · th 0.160 · 24h · 추세완화필터",
+    "avg_pct": 0.4747,
+    "win_rate_pct": 52.9,
+    "trades": 138,
+    "reverse": true,
+    "mode": "alternating",
+    "threshold": 0.16,
+    "hold_hours": 24,
+    "trend_filter": 0.02,
+    "initial_capital": 10000.0,
+    "final_capital": 16972.82,
+    "total_return_pct": 69.73,
+    "turning_points_count": 0,
+    "viewer_url": "./strategy_viewer.html?sid=rev_alternating_th160_h24_tf002"
+  },
+  "turning_points_count": 0,
+  "last_turning_point": null
+}

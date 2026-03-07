@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BTC Strategy Backtest Dashboard</title>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:900px;margin:30px auto;padding:0 16px;line-height:1.6}
+    a{color:#0366d6;text-decoration:none} a:hover{text-decoration:underline}
+    .card{border:1px solid #e1e4e8;border-radius:10px;padding:16px;margin:12px 0}
+    code{background:#f6f8fa;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>BTC Strategy Backtest Dashboard</h1>
+  <p>로컬 분석 결과를 GitHub Pages로 게시한 대시보드입니다.</p>
+  <p><b>쉬운 요약 대시보드:</b> <a href="dashboard/index.html">dashboard/index.html</a></p>
+
+  <div class="card">
+    <h3>기본 분석 (sim)</h3>
+    <ul>
+      <li><a href="sim/README.md">Report (Markdown)</a></li>
+      <li><a href="sim/charts/index.html">Charts Index</a></li>
+      <li><a href="sim/charts/equity_baseline_raw_4h.html">Baseline Equity</a></li>
+      <li><a href="sim/charts/heatmap_raw_cost8bp.html">Heatmap</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>고급 시나리오 (sim/advanced)</h3>
+    <ul>
+      <li><a href="sim/advanced/README.md">Advanced Report</a></li>
+      <li><a href="sim/advanced/charts/index.html">Advanced Charts Index</a></li>
+      <li><a href="sim/advanced/charts/scenario_avg_bar.html">Scenario Avg Bar</a></li>
+      <li><a href="sim/advanced/charts/cost_sensitivity.html">Cost Sensitivity</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>V2 후보 (sim/v2)</h3>
+    <ul>
+      <li><a href="sim/v2/README.md">V2 Report</a></li>
+      <li><a href="sim/v2/charts/index.html">V2 Charts Index</a></li>
+      <li><a href="sim/v2/charts/v2_avg_bar.html">V2 Avg Bar</a></li>
+      <li><a href="sim/v2/charts/v2_walkforward_compare.html">V2 Walkforward</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>V3 실행모델/리스크 (sim/v3)</h3>
+    <ul>
+      <li><a href="sim/v3/README.md">V3 Report</a></li>
+      <li><a href="sim/v3/STATUS.md">V3 Status Snapshot</a></li>
+      <li><a href="sim/v3/LIVE_GUARD_FINAL.md">V3 Live Guard Final</a></li>
+      <li><a href="sim/v3/charts/index.html">V3 Charts Index</a></li>
+      <li><a href="sim/v3/charts/v3_live_dashboard.html">V3 Live Dashboard</a></li>
+      <li><a href="sim/v3/charts/v3_stress_slippage.html">V3 Stress Slippage</a></li>
+    </ul>
+  </div>
+
+  <p><small>참고: GitHub Pages에서는 <code>.md</code>가 원문으로 보일 수 있습니다. 차트는 HTML로 바로 동작합니다.</small></p>
+</body>
+</html>

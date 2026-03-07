@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V2 Avg Return</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>V2 Avg Return</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "bar", "x": ["V2E_alt_th010_flat_vol_cool8_tp25_sl12_h24", "V2A_alt_th009_flat_vol_cool6_tp20_sl12_h24", "V2C_alt_th007_flat_cool24_tp30_sl20_h48", "V2D_raw_th014_flat_vol_tp25_sl15_h24", "V2B_alt_th018_vol_cool8_tp15_sl10_h12", "B0_baseline_raw4h_fixed"], "y": [0.14146483438018087, 0.11105791730876248, 0.09943425757136831, -0.0014483635767273892, -0.06838952272832051, -0.0859168608732794], "text": ["n=289 | P>0=0.89", "n=364 | P>0=0.89", "n=404 | P>0=0.80", "n=250 | P>0=0.49", "n=158 | P>0=0.28", "n=1386 | P>0=0.02"], "textposition": "auto"}];
+    const layout = {"title": "V2 Candidates - Avg Net % per trade", "xaxis": {"title": "Scenario"}, "yaxis": {"title": "Avg Net %"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

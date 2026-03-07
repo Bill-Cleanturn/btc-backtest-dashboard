@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V3 Avg</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>V3 Avg</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "bar", "x": ["V3D_blend80_volTarget", "V3E_blend50_volTarget_tightSL", "V3C_blend80_fixed", "V3B_blend50_fixed", "V3A_taker_fixed"], "y": [0.24475268470782888, 0.19299452791085278, 0.1814648343801805, 0.16646483438018125, 0.14146483438018087], "text": ["n=289 P>0=0.91", "n=289 P>0=0.87", "n=289 P>0=0.95", "n=289 P>0=0.93", "n=289 P>0=0.90"], "textposition": "auto"}];
+    const layout = {"title": "V3 Avg Net Return per Trade", "xaxis": {"title": "Scenario"}, "yaxis": {"title": "Avg Net %"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

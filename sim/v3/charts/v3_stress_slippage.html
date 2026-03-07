@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V3 Stress Slippage</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>V3 Stress Slippage</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "scatter", "mode": "lines+markers", "name": "V3C_like_fixed|maker50", "x": [0.0, 0.02, 0.04], "y": [0.16646483438018125, 0.1464648343801806, 0.12646483438018058]}, {"type": "scatter", "mode": "lines+markers", "name": "V3C_like_fixed|maker80", "x": [0.0, 0.02, 0.04], "y": [0.1814648343801805, 0.16146483438018155, 0.14146483438018087]}, {"type": "scatter", "mode": "lines+markers", "name": "V3D_like_volTarget|maker50", "x": [0.0, 0.02, 0.04], "y": [0.2204211821534275, 0.1879791787475589, 0.15553717534169018]}, {"type": "scatter", "mode": "lines+markers", "name": "V3D_like_volTarget|maker80", "x": [0.0, 0.02, 0.04], "y": [0.24475268470782888, 0.21231068130196032, 0.1798686778960916]}];
+    const layout = {"title": "V3 Stress: extra slippage impact", "xaxis": {"title": "Extra roundtrip slippage %"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>전략 상세 뷰어</title>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 24px auto; padding: 0 12px; line-height: 1.6; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px; margin: 10px 0; }
+    #equity { width: 100%; height: 420px; }
+    .muted { color: #6b7280; font-size: 13px; }
+    .top { font-size: 18px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <p><a href="./index.html">← 대시보드로 돌아가기</a></p>
+  <div class="card">
+    <div class="top" id="title">전략 로딩중...</div>
+    <div id="summary"></div>
+    <div class="muted" id="params"></div>
+  </div>
+
+  <div class="card">
+    <h3>변곡점</h3>
+    <div id="turning"></div>
+  </div>
+
+  <div class="card">
+    <h3>자본곡선 차트 (초기 10,000)</h3>
+    <div id="equity"></div>
+  </div>
+
+  <div class="card">
+    <h3>전체 거래내역</h3>
+    <div id="table"></div>
+  </div>
+
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+  <script>
+    function queryParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    async function main() {
+      const sid = queryParam('sid');
+      if (!sid) {
+        document.getElementById('title').innerText = 'sid 파라미터가 없습니다.';
+        return;
+      }
+
+      const res = await fetch(`./data/strategies/${sid}.json`, { cache: 'no-store' });
+      if (!res.ok) {
+        document.getElementById('title').innerText = `전략 데이터를 찾을 수 없습니다: ${sid}`;
+        return;
+      }
+      const d = await res.json();
+
+      document.getElementById('title').innerText = d.name;
+      document.getElementById('summary').innerText = `평균수익 ${Number(d.avg_pct).toFixed(4)}% / 승률 ${Number(d.win_rate_pct).toFixed(2)}% / 거래수 ${d.trades_count} / 최종금액 ${Number(d.final_capital).toFixed(2)} (총 ${Number(d.total_return_pct).toFixed(2)}%)`;
+      document.getElementById('params').innerText = `파라미터: reverse=${d.params.reverse}, mode=${d.params.mode}, threshold=${d.params.threshold}, hold=${d.params.hold_hours}h, trend_filter=${d.params.trend_filter}`;
+
+      const tp = d.turning_points || [];
+      const tpEl = document.getElementById('turning');
+      if (!tp.length) {
+        tpEl.innerHTML = '<b>감지된 변곡점 없음</b>';
+      } else {
+        const last = tp[tp.length - 1];
+        tpEl.innerHTML = `<b>최근 변곡점:</b> trade #${last.trade_no} / ${last.timestamp_kst} / rolling_avg ${(last.rolling_avg*100).toFixed(3)}% / drawdown ${(last.drawdown*100).toFixed(2)}% (총 ${tp.length}건)`;
+      }
+
+      const x = d.trades.map(t => t.timestamp_kst);
+      const y = d.trades.map(t => t.capital_after);
+      Plotly.newPlot('equity', [{ type: 'scatter', mode: 'lines', x, y, name: d.name }], {
+        title: 'Capital Curve',
+        xaxis: { title: 'Trade Time (KST)' },
+        yaxis: { title: 'Capital' }
+      }, { responsive: true });
+
+      new gridjs.Grid({
+        columns: ['#', '시간', '방향', '순수익률(%)', '손익금액', '거래전 자본', '거래후 자본'],
+        data: d.trades.map(t => [
+          t.trade_no,
+          t.timestamp_kst,
+          t.direction,
+          (Number(t.net_return) * 100).toFixed(4),
+          Number(t.pnl_amount).toFixed(2),
+          Number(t.capital_before).toFixed(2),
+          Number(t.capital_after).toFixed(2)
+        ]),
+        sort: true,
+        search: true,
+        pagination: { enabled: true, limit: 20 }
+      }).render(document.getElementById('table'));
+    }
+
+    main();
+  </script>
+</body>
+</html>

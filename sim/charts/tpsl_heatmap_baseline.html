@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TP/SL Sweep Heatmap</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>TP/SL Sweep Heatmap</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "heatmap", "x": [0.006, 0.008, 0.01, 0.015, 0.02, 0.03], "y": [0.006, 0.008, 0.01, 0.015, 0.02, 0.03], "z": [[-0.1151486185240292, -0.1283366002228629, -0.1364809812711777, -0.14637037288484872, -0.15681251391455248, -0.17826505241760254], [-0.11485015485632563, -0.12820826120795026, -0.1318799410857232, -0.13512617887646702, -0.13391712049118581, -0.1570292470270774], [-0.09782629319836421, -0.11291706334406733, -0.11409471626610045, -0.10628222171255562, -0.10306494058194468, -0.1175107579944128], [-0.07128945482507938, -0.0904709015154129, -0.08198506538933623, -0.06671843883986525, -0.06234461859964234, -0.05336640165243097], [-0.07443927990908415, -0.09494162062334893, -0.08735800551361757, -0.07771966215521471, -0.08012818913032294, -0.05594028837762012], [-0.0626684636701264, -0.07420065466753074, -0.05978760772975689, -0.05789528309518658, -0.05555617997702497, -0.0019805682608531163]], "colorscale": "RdYlGn", "colorbar": {"title": "Avg Net % / trade"}}];
+    const layout = {"title": "TP/SL Sweep Heatmap (Baseline Signals, 48h max hold, cost=0.08%)", "xaxis": {"title": "SL"}, "yaxis": {"title": "TP"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

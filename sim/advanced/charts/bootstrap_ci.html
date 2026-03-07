@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap CI</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>Bootstrap CI</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "bar", "x": ["S6_alt_4h_th018", "S1_alt_flat_48h_th007", "S3_alt_flat_4h_th009", "S2_alt_flat_24h_th007", "S5_raw_24h_th014", "S4_raw_flat_48h_th00988", "S0_baseline_raw_4h"], "y": [0.059706652890169964, 0.054453818860870334, 0.030676210137241408, 0.015139885433519898, 0.01368685478534822, 0.008870466457917722, -0.0859168608732794], "text": ["P(mean>0)=0.66", "P(mean>0)=0.66", "P(mean>0)=0.69", "P(mean>0)=0.57", "P(mean>0)=0.52", "P(mean>0)=0.52", "P(mean>0)=0.02"], "textposition": "auto", "error_y": {"type": "data", "symmetric": false, "array": [0.2355464226212171, 0.2520491444817141, 0.0938009892062641, 0.18030084111323239, 0.2764476537267545, 0.2843931556898306, 0.07220021907286693], "arrayminus": [0.24483850264692694, 0.23891823979238755, 0.09852029504393957, 0.1743163373926615, 0.2709226492080479, 0.296198863454301, 0.07443704292654518]}}];
+    const layout = {"title": "Bootstrap 90% CI of Mean Return (per trade)", "xaxis": {"title": "Scenario"}, "yaxis": {"title": "Mean Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

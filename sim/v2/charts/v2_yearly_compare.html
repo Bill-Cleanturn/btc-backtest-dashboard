@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V2 Yearly Compare</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>V2 Yearly Compare</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "scatter", "mode": "lines+markers", "name": "B0_baseline_raw4h_fixed", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [0.023183283422375342, -0.0853978051622174, -0.08859116570138262, -0.1313600313639953, -0.173725557545895, -0.18155858498139762]}, {"type": "scatter", "mode": "lines+markers", "name": "V2A_alt_th009_flat_vol_cool6_tp20_sl12_h24", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [-0.05558462601432354, 0.187206816985369, 0.06797813162739391, 0.09972229466453414, 0.15819323724052545, 0.21648413749370538]}, {"type": "scatter", "mode": "lines+markers", "name": "V2B_alt_th018_vol_cool8_tp15_sl10_h12", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [0.21938677731548495, -0.35451371694314315, 0.07478546674445287, 0.2582821543357543, 0.025959916507173525, 0.7261580067504793]}, {"type": "scatter", "mode": "lines+markers", "name": "V2C_alt_th007_flat_cool24_tp30_sl20_h48", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [0.4284140462634412, 0.1601672648261935, -0.24526395152294142, -0.2487365386319403, 0.29660224086879516, 0.3565880582081547]}, {"type": "scatter", "mode": "lines+markers", "name": "V2D_raw_th014_flat_vol_tp25_sl15_h24", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [-0.027470938187917134, 0.06617105220314724, -0.15938377358743713, 0.3092391460090255, -0.39140327666946473, -0.2820858214271626]}, {"type": "scatter", "mode": "lines+markers", "name": "V2E_alt_th010_flat_vol_cool8_tp25_sl12_h24", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [-0.09774518006899185, 0.25110694024255875, -0.27401704095409046, 0.1574339999097447, 0.400711177499474, 0.027679358886101783]}];
+    const layout = {"title": "V2 Yearly Average Return", "xaxis": {"title": "Year"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

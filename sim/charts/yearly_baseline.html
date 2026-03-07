@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yearly Baseline Performance</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>Yearly Baseline Performance</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "scatter", "mode": "lines+markers", "name": "4h avg %", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [0.023183283422375342, -0.0853978051622174, -0.08859116570138262, -0.1313600313639953, -0.173725557545895, -0.18155858498139762]}, {"type": "scatter", "mode": "lines+markers", "name": "48h avg %", "x": [2021, 2022, 2023, 2024, 2025, 2026], "y": [0.27169617139505964, -0.08699317826490163, -0.42732539738190406, -0.14647389104548456, -0.33923256209755975, -0.7895864784286782]}];
+    const layout = {"title": "Yearly Avg Net Return per Trade (Baseline)", "xaxis": {"title": "Year"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

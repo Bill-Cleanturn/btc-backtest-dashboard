@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LSR Backtest Heatmap (Raw)</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>LSR Backtest Heatmap (Raw)</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "heatmap", "x": [1, 4, 24, 48], "y": [0.05, 0.07, 0.09, 0.0988, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22], "z": [[-0.06209907290575582, -0.06408619211156494, -0.0918498372041334, -0.1065027155262302], [-0.051503970539156854, -0.06008613141156845, -0.048788574608134745, -0.1288040569882554], [-0.049918905961808535, -0.05814004849682175, -0.09416758228545714, -0.13704517550120254], [-0.058670641966867276, -0.0859168608732794, -0.10344079061149587, -0.10346218884588795], [-0.06137111369560994, -0.11119015435874097, -0.10129770238997537, -0.094380161384553], [-0.03257727166314205, -0.06254727613561839, 0.01368685478534822, -0.03865920026388621], [-0.014181009918529533, -0.009822239443393216, -0.18302681566416132, -0.23253909699470227], [0.0029096050674886644, -0.00900377300662424, -0.28632637618378926, -0.26377103517103057], [-0.007438440227683748, -0.010204810271538911, -0.2884976799177538, -0.23985951363294933], [0.00199958324924342, 0.03677859988626544, -0.11925322568715785, -0.07778287252166173]], "colorscale": "RdYlGn", "reversescale": false, "colorbar": {"title": "Avg Net % / trade"}}];
+    const layout = {"title": "LSR Backtest Heatmap (Raw, Cost=0.08%, No Trend Filter)", "xaxis": {"title": "Hold Hours"}, "yaxis": {"title": "Threshold"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>
