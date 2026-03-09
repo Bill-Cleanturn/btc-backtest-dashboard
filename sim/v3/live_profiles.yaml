@@ -1,0 +1,27 @@
+# Generated from v3 backtests
+profiles:
+  conservative:
+    strategy: V3C_blend80_fixed
+    maker_ratio: 0.8
+    sizing: fixed
+    tp: 0.025
+    sl: 0.012
+    max_hold_hours: 24
+    guard:
+      max_losing_streak: 9
+      pause_roll20_below: -0.060
+      riskoff_month_below: -0.061
+  aggressive:
+    strategy: V3D_blend80_volTarget
+    maker_ratio: 0.8
+    sizing: vol_target
+    vol_target: 0.01
+    min_size: 0.5
+    max_size: 1.8
+    tp: 0.025
+    sl: 0.012
+    max_hold_hours: 24
+    guard:
+      max_losing_streak: 9
+      pause_roll20_below: -0.107
+      riskoff_month_below: -0.095

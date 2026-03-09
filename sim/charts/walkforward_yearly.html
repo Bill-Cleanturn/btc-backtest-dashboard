@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Walk-forward Yearly Performance</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>Walk-forward Yearly Performance</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "scatter", "mode": "lines+markers", "name": "Walk-forward test avg 4h %", "x": [2022, 2023, 2024, 2025, 2026], "y": [0.031811748177590485, -0.22127746280518187, -0.09325562456392751, -0.13341560299645436, 0.2948882919200761]}, {"type": "scatter", "mode": "lines+markers", "name": "Walk-forward test avg 48h %", "x": [2022, 2023, 2024, 2025, 2026], "y": [-0.32008550255374035, -0.5771348081774598, 0.30874276277016804, -0.7361596619413616, -0.6009624510992687]}];
+    const layout = {"title": "Walk-forward Test Performance by Year (threshold optimized on prior years)", "xaxis": {"title": "Test Year"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

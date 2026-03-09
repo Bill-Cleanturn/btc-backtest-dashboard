@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cost Sensitivity</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>Cost Sensitivity</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "scatter", "mode": "lines+markers", "name": "baseline_raw_4h", "x": [0.02, 0.04, 0.06, 0.08, 0.1, 0.12], "y": [-0.02591686087327864, -0.045916860873279536, -0.06591686087327982, -0.0859168608732794, -0.10591686087327891, -0.12591686087328052]}, {"type": "scatter", "mode": "lines+markers", "name": "alt_flat_4h_th009", "x": [0.02, 0.04, 0.06, 0.08, 0.1, 0.12], "y": [0.09067621013724314, 0.07067621013724124, 0.05067621013724256, 0.030676210137241408, 0.010676210137241881, -0.009323789862758372]}, {"type": "scatter", "mode": "lines+markers", "name": "alt_4h_th018", "x": [0.02, 0.04, 0.06, 0.08, 0.1, 0.12], "y": [0.11970665289017084, 0.09970665289016965, 0.07970665289017075, 0.059706652890169964, 0.039706652890170224, 0.01970665289017032]}, {"type": "scatter", "mode": "lines+markers", "name": "alt_flat_48h_th007", "x": [0.02, 0.04, 0.06, 0.08, 0.1, 0.12], "y": [0.11445381886087198, 0.09445381886087047, 0.07445381886087131, 0.054453818860870334, 0.03445381886087048, 0.014453818860870422]}, {"type": "scatter", "mode": "lines+markers", "name": "raw_24h_th014", "x": [0.02, 0.04, 0.06, 0.08, 0.1, 0.12], "y": [0.07368685478534955, 0.053686854785348785, 0.03368685478534873, 0.01368685478534822, -0.006313145214651577, -0.026313145214651685]}];
+    const layout = {"title": "Cost Sensitivity by Scenario", "xaxis": {"title": "Roundtrip Cost %"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

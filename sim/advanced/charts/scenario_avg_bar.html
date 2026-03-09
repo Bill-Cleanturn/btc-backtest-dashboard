@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scenario Avg Return</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>Scenario Avg Return</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "bar", "x": ["S6_alt_4h_th018", "S1_alt_flat_48h_th007", "S3_alt_flat_4h_th009", "S2_alt_flat_24h_th007", "S5_raw_24h_th014", "S4_raw_flat_48h_th00988", "S0_baseline_raw_4h"], "y": [0.059706652890169964, 0.054453818860870334, 0.030676210137241408, 0.015139885433519898, 0.01368685478534822, 0.008870466457917722, -0.0859168608732794], "text": ["n=213 | win=51.2%", "n=812 | win=49.1%", "n=485 | win=47.6%", "n=812 | win=48.4%", "n=670 | win=48.2%", "n=663 | win=49.8%", "n=1386 | win=46.7%"], "textposition": "auto"}];
+    const layout = {"title": "Advanced Scenarios - Avg Net Return per Trade", "xaxis": {"title": "Scenario"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regime Analysis (Baseline 4h)</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:24px;}#chart{width:100%;height:78vh;}</style>
+</head>
+<body>
+  <h2>Regime Analysis (Baseline 4h)</h2>
+  <div id="chart"></div>
+  <script>
+    const data = [{"type": "bar", "x": ["down", "flat", "up"], "y": [-0.10840334459916634, -0.04301198177558745, -0.17726327176274795], "text": ["n=546", "n=663", "n=177"], "textposition": "auto"}];
+    const layout = {"title": "Baseline 4h Avg Net Return by 24h Regime (cost=0.08%)", "xaxis": {"title": "Regime"}, "yaxis": {"title": "Avg Net % / trade"}};
+    Plotly.newPlot('chart', data, layout, {responsive:true});
+  </script>
+</body>
+</html>
